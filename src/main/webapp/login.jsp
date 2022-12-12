@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,20 +9,20 @@
 </head>
 
 <body>
-<div id="loginDiv">
+<div id="loginDiv" style="height: 350px">
     <form action="/tomcatwar_war/loginServlet" method="post" id="form">
         <h1 id="loginMsg">LOGIN IN</h1>
+        <div id="errorMsg">${login_msg} ${register_msg}</div>
         <p>Username:<input id="username" name="username" type="text"></p>
-
         <p>Password:<input id="password" name="password" type="password"></p>
-
+        <p>Remember:<input id="remember" name="remember" value="1" type="checkbox"></p>
         <div id="subDiv">
-            <input type="submit" class="button" value="login up">
+            <input type="submit" class="button" value="login in">
             <input type="reset" class="button" value="reset">&nbsp;&nbsp;&nbsp;
-            <a href="register.jsp">没有账号？点击注册</a>
+            <a href="register.jsp">没有账号？</a>
         </div>
     </form>
 </div>
-
 </body>
 </html>
+

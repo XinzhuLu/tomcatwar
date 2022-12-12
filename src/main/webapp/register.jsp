@@ -22,11 +22,9 @@
                 <td class="inputs">
                     <input name="username" type="text" id="username">
                     <br>
-                    <span id="username_err" class="err_msg" style="display: none">用户名不太受欢迎</span>
+                    <span id="username_err" class="err_msg">${register_msg}</span>
                 </td>
-
             </tr>
-
             <tr>
                 <td>密码</td>
                 <td class="inputs">
@@ -39,7 +37,7 @@
                 <td>验证码</td>
                 <td class="inputs">
                     <input name="checkCode" type="text" id="checkCode">
-                    <img src="imgs/a.jpg">
+                    <img id="checkCodeImg" src="src/main/webapp/img/abc.jpg">
                     <a href="#" id="changeImg" >看不清？</a>
                 </td>
             </tr>
@@ -53,4 +51,11 @@
 
 </div>
 </body>
+
+<script>
+    document.getElementById("changeImg").onclick = function () {
+        //路径后面添加时间戳的目的是避免浏览器进行缓存静态资源+new Date().getMilliseconds()
+        document.getElementById("checkCodeImg").src = "/tomcatwar_war/checkCodeServlet";
+    }
+</script>
 </html>
