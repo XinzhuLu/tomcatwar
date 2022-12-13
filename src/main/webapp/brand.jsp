@@ -13,6 +13,8 @@
 
 %>
 
+<script src="js/axios-0.18.0.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +24,7 @@
 <body>
 
 <hr>
+<h1>${user.username},欢迎您</h1>
 <input type="button" value="新增" id="add">
 <hr>
 

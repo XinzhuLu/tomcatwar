@@ -1,5 +1,6 @@
 package space.xinzhu.servlet;
 
+import com.alibaba.fastjson.JSON;
 import space.xinzhu.pojo.Brand;
 import space.xinzhu.service.BrandService;
 
@@ -31,6 +32,14 @@ public class SelectAllServlet extends HttpServlet {
         request.setAttribute("brands",brands);
         //3. 转发到brand.jsp
         request.getRequestDispatcher("/brand.jsp").forward(request,response);
+
+        //2. 将集合转换为JSON数据   序列化
+        //String jsonString = JSON.toJSONString(brands);
+
+        //3. 响应数据  application/json   text/json
+        //response.setContentType("text/json;charset=utf-8");
+        //response.getWriter().write(jsonString);
+
     }
 
     @Override
