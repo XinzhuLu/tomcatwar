@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<script>-->
+<!--    //1. 创建核心对象-->
+<!--    var xhttp;-->
+<!--    if (window.XMLHttpRequest) {-->
+<!--        xhttp = new XMLHttpRequest();-->
+<!--    } else {-->
+<!--        // code for IE6, IE5-->
+<!--        xhttp = new ActiveXObject("Microsoft.XMLHTTP");-->
+<!--    }-->
+<!--    //2. 发送请求-->
+<!--    xhttp.open("GET", "http://localhost:9999/tomcatwar_war/ajaxServlet");-->
+<!--    xhttp.send();-->
+
+<!--    //3. 获取响应-->
+<!--    xhttp.onreadystatechange = function() {-->
+<!--        if (this.readyState == 4 && this.status == 200) {-->
+<!--            alert(this.responseText);-->
+<!--        }-->
+<!--    };-->
+<!--</script>-->
+
+<script src="js/axios-0.18.0.js"></script>
+<script>
+    //1. get
+    /* axios({
+         method:"get",
+         url:"http://localhost:8080/ajax-demo/axiosServlet?username=zhangsan"
+     }).then(function (resp) {
+         alert(resp.data);
+     })*/
+
+    //2. post  在js中{} 表示一个js对象，而这个js对象中有三个属性
+    axios({
+        method:"post",
+        url:"http://localhost:9999/tomcatwar_war/axiosServlet",
+        data:"username=zhangsan"
+    }).then(function (resp) {
+        alert(resp.data);
+    })
+</script>
+
+<script>
+    //1. 定义JSON字符串
+    var jsonStr = '{"name":"zhangsan","age":23,"addr":["北京","上海","西安"]}'
+    alert(jsonStr);
+
+    //2. 将 JSON 字符串转为 JS 对象
+    let jsObject = JSON.parse(jsonStr);
+    alert(jsObject)
+    alert(jsObject.name)
+    //3. 将 JS 对象转换为 JSON 字符串
+    let jsonStr2 = JSON.stringify(jsObject);
+    alert(jsonStr2)
+</script>
+</body>
+</html>
